@@ -44,7 +44,7 @@ const ListOfSites = () => {
 
     const getSite = () => {
         setValues({...values,loading: true})
-        return fetch(`http://localhost:8081/site/`, {
+        return fetch(`https://twinkle-agro-procurement-api.vercel.app//site/`, {
             method: "GET"
         })
             .then(response => {
@@ -70,7 +70,7 @@ const ListOfSites = () => {
     const deleteSite = (e, id) => {
         const r = window.confirm("Do you really want to delete the site ?");
         if(r == true) {
-            axios.delete(`http://localhost:8081/site/delete/${id}`)
+            axios.delete(`https://twinkle-agro-procurement-api.vercel.app//site/delete/${id}`)
                 .then(response => {
                     loadSite()
                 })

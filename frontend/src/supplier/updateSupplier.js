@@ -25,7 +25,7 @@ class UpdateSupplier extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8081/supplier/' + this.props.match.params.id)
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//supplier/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     supplierID: res.data.supplierID,
@@ -66,7 +66,7 @@ class UpdateSupplier extends Component {
             contactNo: this.state.contactNo
         };
 
-        axios.put('http://localhost:8081/supplier/update/' + this.props.match.params.id, supplierObject)
+        axios.put('https://twinkle-agro-procurement-api.vercel.app//supplier/update/' + this.props.match.params.id, supplierObject)
             .then((res) => {
                 console.log(res.data)
                 console.log('Supplier successfully updated')

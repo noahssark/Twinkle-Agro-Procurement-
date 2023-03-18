@@ -14,7 +14,7 @@ class UpdateOrderApprovalStatus extends Component {
 
     //to call the end point and get the values using axios
     componentDidMount() {
-        axios.get('http://localhost:8081/order/')
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//order/')
             .then(response => {
                 this.setState({orders: response.data.data})
             } )
@@ -23,7 +23,7 @@ class UpdateOrderApprovalStatus extends Component {
     approve(e, id){
         let answer = window.confirm('Are you sure you want to update the approval status to approved?');
         if(answer) {
-            axios.put(`http://localhost:8081/order/update/status/${id}`, {status: "Approved", id: id})
+            axios.put(`https://twinkle-agro-procurement-api.vercel.app//order/update/status/${id}`, {status: "Approved", id: id})
                 .then(response => {
                     this.componentDidMount()
                 })

@@ -13,7 +13,7 @@ class UpdateOrderDeliveryStatus extends Component {
 
     //to call the end point and get the values using axios
     componentDidMount() {
-        axios.get('http://localhost:8081/order/')
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//order/')
             .then(response => {
                 this.setState({orders: response.data.data})
 
@@ -23,7 +23,7 @@ class UpdateOrderDeliveryStatus extends Component {
     delivered(e, id){
         let answer = window.confirm('Are you sure you want to update the delivery status to delivered?');
         if(answer) {
-            axios.put(`http://localhost:8081/order/update/delivery-status/${id}`, {deliveryStatus: "Delivered", id: id})
+            axios.put(`https://twinkle-agro-procurement-api.vercel.app//order/update/delivery-status/${id}`, {deliveryStatus: "Delivered", id: id})
                 .then(response => {
                     this.componentDidMount()
                 })
@@ -33,7 +33,7 @@ class UpdateOrderDeliveryStatus extends Component {
     notDelivered(e, id){
         let answer = window.confirm('Are you sure you want to update the delivery status to not delivered?');
         if(answer) {
-            axios.put(`http://localhost:8081/order/update/delivery-status/${id}`, {
+            axios.put(`https://twinkle-agro-procurement-api.vercel.app//order/update/delivery-status/${id}`, {
                 deliveryStatus: "Not delivered",
                 id: id
             })
@@ -46,7 +46,7 @@ class UpdateOrderDeliveryStatus extends Component {
     pending(e, id){
         let answer = window.confirm('Are you sure you want to update the delivery status to pending?');
         if(answer) {
-            axios.put(`http://localhost:8081/order/update/delivery-status/${id}`, {deliveryStatus: "Pending", id: id})
+            axios.put(`https://twinkle-agro-procurement-api.vercel.app//order/update/delivery-status/${id}`, {deliveryStatus: "Pending", id: id})
                 .then(response => {
                     this.componentDidMount()
                 })

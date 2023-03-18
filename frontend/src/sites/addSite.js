@@ -34,7 +34,7 @@ const AddSite = () => {
     const clickSubmit = site => {
         site.preventDefault();
         axios
-            .post(`http://localhost:8081/site/create`, {siteID, name, location}, {
+            .post(`https://twinkle-agro-procurement-api.vercel.app//site/create`, {siteID, name, location}, {
                 headers: {
                 }
             })

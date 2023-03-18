@@ -36,7 +36,7 @@ const AddSupplier = () => {
     const clickSubmit = supplier => {
         supplier.preventDefault();
         axios
-            .post(`http://localhost:8081/supplier/create`, {supplierID, name, address, contactNo}, {
+            .post(`https://twinkle-agro-procurement-api.vercel.app//supplier/create`, {supplierID, name, address, contactNo}, {
                 headers: {
                 }
             })

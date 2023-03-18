@@ -21,7 +21,7 @@ class ViewSupplierByID extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8081/supplier/' + this.props.match.params.id)
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//supplier/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     supplierID: res.data.supplierID,

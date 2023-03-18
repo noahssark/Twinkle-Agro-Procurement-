@@ -11,7 +11,7 @@ class ViewOrderList extends Component {
 
     //to call the end point and get the values using axios
     componentDidMount() {
-        axios.get('http://localhost:8081/order/')
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//order/')
             .then(response => {
                 this.setState({orders: response.data.data})
 
@@ -22,7 +22,7 @@ class ViewOrderList extends Component {
     deleteOrder(e, id){
         const r = window.confirm("Do you really want to delete payment submission");
         if(r === true) {
-            axios.delete(`http://localhost:8081/order/delete/${id}`)
+            axios.delete(`https://twinkle-agro-procurement-api.vercel.app//order/delete/${id}`)
                 .then(response => {
                     alert('Data successfully deleted')
                     this.componentDidMount()

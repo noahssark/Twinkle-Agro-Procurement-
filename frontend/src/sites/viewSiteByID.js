@@ -20,7 +20,7 @@ class ViewSiteByID extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8081/site/' + this.props.match.params.id)
+        axios.get('hhttps://twinkle-agro-procurement-api.vercel.app//site/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     siteID: res.data.siteID,

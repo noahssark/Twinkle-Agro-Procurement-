@@ -45,7 +45,7 @@ const ListOfSuppliers = () => {
 
     const getSupplier = () => {
         setValues({...values,loading: true})
-        return fetch(`http://localhost:8081/supplier/`, {
+        return fetch(`https://twinkle-agro-procurement-api.vercel.app//supplier/`, {
             method: "GET"
         })
             .then(response => {
@@ -70,7 +70,7 @@ const ListOfSuppliers = () => {
     const deleteSupplier = (e, id) => {
         const r = window.confirm("Do you really want to delete the supplier ?");
         if(r == true) {
-            axios.delete(`http://localhost:8081/supplier/delete/${id}`)
+            axios.delete(`https://twinkle-agro-procurement-api.vercel.app//supplier/delete/${id}`)
                 .then(response => {
                     loadSupplier()
                 })

@@ -41,7 +41,7 @@ class AddOrder extends Component {
 
     //to get workshop array from the backend
     componentDidMount() {
-        axios.get('http://localhost:8081/item/')
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//item/')
             .then(response => {
                 this.setState({items: response.data}, () => {
                     let data = [];
@@ -55,7 +55,7 @@ class AddOrder extends Component {
                     this.setState({items: data});
                 })
             })
-        axios.get('http://localhost:8081/site/')
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//site/')
             .then(response => {
                 this.setState({sites: response.data}, () => {
                     let data = [];
@@ -69,7 +69,7 @@ class AddOrder extends Component {
                     this.setState({sites: data});
                 })
             })
-        axios.get('http://localhost:8081/supplier/')
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//supplier/')
             .then(response => {
                 this.setState({suppliers: response.data}, () => {
                     let data = [];
@@ -105,7 +105,7 @@ class AddOrder extends Component {
         }
         //call the end point and pass the values using axios
         console.log('data to send', order);
-        axios.post('http://localhost:8081/order/create', order )
+        axios.post('https://twinkle-agro-procurement-api.vercel.app//order/create', order )
             .then(response => {
                 alert('Successfully submitted')
                 this.props.history.push('/orders');

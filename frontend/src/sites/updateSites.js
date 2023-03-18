@@ -22,7 +22,7 @@ class UpdateSites extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8081/site/' + this.props.match.params.id)
+        axios.get('https://twinkle-agro-procurement-api.vercel.app//site/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     siteID: res.data.siteID,
@@ -58,7 +58,7 @@ class UpdateSites extends Component {
             type: this.state.type
         };
 
-        axios.put('http://localhost:8081/site/update/' + this.props.match.params.id, siteObject)
+        axios.put('https://twinkle-agro-procurement-api.vercel.app//site/update/' + this.props.match.params.id, siteObject)
             .then((res) => {
                 console.log(res.data)
                 console.log('Site Details successfully updated')
